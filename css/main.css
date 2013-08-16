@@ -1,0 +1,370 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #555;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	background: #EFEFEF;
+}
+
+#page
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background: white;
+	border: 1px solid #C9E0ED;
+	width: 1050px;
+}
+
+#header
+{
+	margin: 0;
+	padding: 0;
+	border-top: 3px solid #C9E0ED;
+}
+
+#content
+{	
+	float: left;
+    padding: 2px 10px 10px 2px;
+	width: 800px;
+}
+
+#sidebar
+{
+	padding: 20px 20px 20px 0;
+}
+
+#left-nav
+{
+	background-image: url('horizon.png');
+	background-repeat: repeat-y;
+	float: left;
+	width: 215px;
+	height: 100%;
+}
+
+#left-login
+{
+	float: left;
+	width: 200px;
+}
+
+#left-menu
+{
+	float: left;
+	width: 220px;
+}
+
+#footer
+{
+	padding: 10px;
+	margin: 10px 20px;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #C9E0ED;
+}
+
+#logo
+{
+	padding: 10px 20px;
+	font-size: 200%;
+}
+
+#mainmenu
+{
+	position: relative;
+	left: 200px;
+	top: 0px;
+	background:white url(bg.gif) repeat-x left top;
+	width: 750px;
+}
+
+#mainmenu ul
+{
+	padding:6px 20px 5px 20px;
+	margin:0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+}
+
+#mainmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFDFF;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #0066A4;
+}
+
+.operations li a:hover
+{
+	background: #80CFFF;
+}
+
+/***************** TAMBAHAN JAWA *****************/
+div.kiri{
+	background-image:url('../images/kiri.png');
+	width:34px;
+	height:35px;
+	background-repeat:no-repeat;
+	border:0;
+	float:right;
+}
+div.tengah{
+	background-image:url('../images/tengah.png');
+	padding:0;
+	margin:0;
+	height:auto;
+	height:35px;
+	background-repeat:repeat-x;
+	border:0;
+	float:right;
+	line-height:30px;
+}
+div.kanan{
+	background-image:url('../images/kanan.png');
+	width:37px;
+	height:35px;
+	background-repeat:no-repeat;
+	border:0;
+	float:right;
+}
+a.bLink{
+	text-decoration:none;
+	color:black;
+}
+a.bLink:hover{
+	opacity:0.7;
+}
+
+h1{
+	display:block;
+	background:url("../images/menu_separate.png") repeat-x scroll 0px 15px rgb(104, 109, 115);
+	line-height:45px;
+	border:5px double white;
+	padding-left:5px;
+	color:white;
+}
+
+h2{
+	display:block;
+	background:url("../images/menu_separate.png") repeat-x scroll 0px 15px rgb(104, 109, 115);
+	line-height:20px;
+	//border:5px double white;
+	padding-left:0px;
+	color:white;
+	width:300px;
+}
+
+.menuVersi1{
+	background-image:url('../images/tengah.png');
+	margin:0 0px 0 3px;
+	height:35px;
+	background-repeat:repeat-x;
+	border:0;
+	float:left;
+	text-decoration:none;
+	/*
+	width:70px;
+	float:left;
+	*/
+	line-height:30px;
+}
+
+.menuVersi1 a{
+	text-decoration:none;	
+}
+
+table.antrian td.ditunda,table.antrian td.mengantri{
+		/*border:1px solid black;*/
+		width:40%;		
+		margin:0;
+		padding:0px;
+		vertical-align:top;
+
+	}
+	
+	
+table.antrian td.ditunda #ditunda-grid,table.antrian td.mengantri #mengantri-grid{
+	padding:0;
+	vertical-align:top;
+}
+
+
+table.antrian td.ditangani{
+	width:60%;
+	padding:0px 2px 0px 0px;
+	text-align:left;
+	margin:0;
+	text-align:center;
+	vertical-align:top
+}
+
+legend{
+	color			: #000;
+	background		: rgb(195, 217, 255);
+	border			: 1px solid #781351;
+	padding			: 2px 6px;
+	font-weight		: bold;
+	font-family		: sans-serif;
+}
+
+fieldset{
+	border			: 1px solid #781351;
+	padding			: 0.5em 1em;
+}

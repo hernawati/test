@@ -1,0 +1,103 @@
+<?php
+/* @var $this PasienController */
+/* @var $model Pasien */
+
+$this->breadcrumbs=array(
+	'Pasiens'=>array('index'),
+	$model->PAS_NOREKAMMEDIK,
+);
+?>
+<h1>Detail Pasien ID: <?php echo $model->PAS_NOREKAMMEDIK; ?></h1>
+
+<?php
+	echo '<br/>';
+	if(isset($_GET['statusadmin']) && $_GET['statusadmin']==true){	
+		echo CHtml::link('Daftar Pasien',array('admin'));
+		echo '&nbsp;&nbsp;|&nbsp;&nbsp;';
+		echo CHtml::link('Pasien Baru',array('create'));
+		echo '&nbsp;&nbsp;|&nbsp;&nbsp;';
+		echo CHtml::link('Ubah',array('update', 'id'=>$model->PAS_NOREKAMMEDIK));
+		echo '&nbsp;&nbsp;|&nbsp;&nbsp;';
+		echo CHtml::link('Hapus',array('delete', 'id'=>$model->PAS_NOREKAMMEDIK));
+	}else{
+		echo CHtml::link('Daftar Pasien',array('index'));
+	}
+
+	echo HTML::link('Hapus',array('delete', 'id'=>$model->PAS_NOREKAMMEDIK));
+	echo HTML::link('Ubah',array('update', 'id'=>$model->PAS_NOREKAMMEDIK));
+	echo HTML::link('Pasien Baru',array('create'));
+	echo HTML::link('Daftar Pasien',array('admin'));
+
+	echo '<br/>';
+	echo '<br/>';
+	
+?>
+
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'PAS_NOREKAMMEDIK',
+		'asuransi.ASR_NAMAASURANSI',
+		'PAS_NAMAPASIEN',
+		'PAS_TGLLAHIR',
+		'PAS_PEKERJAAN',
+		'PAS_ALAMAT',
+		'PAS_JENISKELAMIN',
+		'PAS_STATUSPEMBAYARAN',
+		'PAS_TGLPENDAFTARAN',
+		'PAS_AGAMA',
+		'PAS_GOLONGANDARAH',
+	),
+)); ?>
+<br/>
+<br/>
+<h3>Daftar Rekam Medik : </h3>
+<?php
+	if(isset($_GET['statusadmin']) && $_GET['statusadmin']==true){
+		echo CHtml::link('Tambah Rekam Medik',array('rekammedik/create','id'=>$model->PAS_NOREKAMMEDIK));		
+		$this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'pasien-grid',
+			'dataProvider'=>$rekammedik->search(),
+			'filter'=>$rekammedik,
+			'columns'=>array(
+				'PAS_NOREKAMMEDIK',
+				'REM_TGLKUNJUNGAN',
+				'REM_AMNESA',
+				'REM_DIAGNOSA',
+				'REM_THERAPHY',
+				'REM_STATUSMASUK',
+				'REM_STATUSKELUAR',
+				'tujuan.REMTU_NAMA',
+				array(
+					'class'=>'CButtonColumn',
+					'header'=>'Aksi',
+					'viewButtonUrl'=>'\'index.php?r=rekammedik/view&id=\'.$data->PAS_NOREKAMMEDIK.\'&tglkunjungan=\'.$data->REM_TGLKUNJUNGAN.\'&statusadmin=true\'',
+					'updateButtonUrl'=>'\'index.php?r=rekammedik/update&id=\'.$data->PAS_NOREKAMMEDIK.\'&tglkunjungan=\'.$data->REM_TGLKUNJUNGAN.\'statusadmin=true\'',
+					'deleteButtonUrl'=>'\'index.php?r=rekammedik/delete&id=\'.$data->PAS_NOREKAMMEDIK.\'&tglkunjungan=\'.$data->REM_TGLKUNJUNGAN.\'statusadmin=true\'',
+				),
+			),
+		));
+	}else{
+		$this->widget('zii.widgets.grid.CGridView', array(
+			'id'=>'pasien-grid',
+			'dataProvider'=>$rekammedik->search(),
+			'filter'=>$rekammedik,
+			'columns'=>array(
+				'PAS_NOREKAMMEDIK',
+				'REM_TGLKUNJUNGAN',
+				'REM_AMNESA',
+				'REM_DIAGNOSA',
+				'REM_THERAPHY',
+				'REM_STATUSMASUK',
+				'REM_STATUSKELUAR',
+				array(
+					'class'=>'CLinkColumn',
+					'label'=>'Lihat',
+					'header'=>'Detail',
+					'urlExpression'=>'array("rekamMedik/view","id"=>$data->PAS_NOREKAMMEDIK,"tglkunjungan"=>$data->REM_TGLKUNJUNGAN)',
+				),
+			),
+		));
+	}
+?>
